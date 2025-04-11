@@ -1,0 +1,38 @@
+.leaderboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Add spacing below the header */
+}
+
+.leaderboard {
+    width: 80%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: rgb(40, 40, 40); /* Dark background for the table */
+    color: white;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Clip overflowing content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.leaderboard thead {
+    background-color: rgb(30, 30, 50); /* Slightly darker header */
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.leaderboard th, .leaderboard td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgb(50, 50, 70); /* Row separator */
+}
+
+.leaderboard tbody tr:hover {
+    background-color: rgb(50, 50, 70); /* Highlight row on hover */
+}
+
+.leaderboard tbody tr:last-child td {
+    border-bottom: none; /* Remove border for the last row */
+}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: rgb(200, 200, 200); /* Light gray background */
+}
+
+.header {
+    height: 100px; /* Consistent header height */
+    display: flex;
+    justify-content: space-between; /* Space between logo, text, and help */
+    align-items: center; /* Vertically center items */
+    background-color: rgb(20, 20, 40); /* Consistent dark blue background */
+    color: white;
+    padding: 0 10px; /* Reduced padding for alignment */
+}
+
+.centre_piece {
+    flex-grow: 1; /* Allow the center text to take up available space */
+    display: flex;
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    text-align: center; /* Ensure text alignment is centered */
+}
+
+.logo_button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px; /* Reduced margin for better alignment */
+}
+
+.logo_button .home_icon {
+    width: 250px; /* Adjusted logo size for consistency */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.name {
+    font-size: 36px; /* Consistent center text size */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(200, 200, 255); /* Consistent text color */
+    margin: 0; /* Remove any extra margin */
+    padding: 0; /* Remove any extra padding */
+}
+
+.name span {
+    font-size: 18px; /* Consistent subtitle size */
+    font-weight: normal;
+    display: block;
+}
+
+.info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px; /* Reduced margin for alignment */
+    padding-left: 20px; /* Added padding to shift the center text */
+}
+
+.info a {
+    color: white;
+    font-size: 18px; /* Consistent "HELP" text size */
+    text-decoration: none;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Full height minus header */
+}
+
+.login-box {
+    width: 300px;
+    background-color: rgb(50, 50, 50); /* Dark gray background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.login-header {
+    height: 50px;
+    background-color: rgb(20, 20, 40); /* Dark blue header */
+}
+
+.login-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-body label {
+    color: white;
+    font-size: 16px;
+}
+
+.login-body input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
