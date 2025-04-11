@@ -1,86 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>New Page</title>
-        <link rel="stylesheet" type="text/css" href="hack.css">
-        <link rel="stylesheet" type="text/css" href="leaderboards.css"> <!-- New CSS file -->
-    </head>
-    <body>
-        <div class="header">
-            <div class="logo_button">
-                <div class="home_box">
-                    <img class="home_icon" src="dhruva.png" alt="Home">
-                </div>
-            </div>
-            <div class="centre_piece">
-                <div class="name">
-                    NEW PAGE<br>
-                    <span>CONTENT HERE</span>
-                </div>
-            </div>
-            <div class="info">
-                <div class="leaderboards">
-                    <a href="https://google.com" style="text-decoration: none;">
-                        LEADERBOARDS
-                    </a>
-                </div>
-                <div class="help">
-                    <a href="https://google.com" style="text-decoration: none;">
-                        HELP
-                    </a>
-                </div>
-                <div class="circle_button" onclick="window.location.href='index.html';">
-                    <!-- Optional icon or text inside the circle -->
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page | EPOCH'25</title>
+    <link rel="stylesheet" href="static/css/new_website.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-button">
+            <div class="home-box">
+                <img class="home-icon" src="static/images/dhruva.png" alt="Home">
             </div>
         </div>
-
-        <div class="background">
-            <!-- background image loaded via CSS -->
+        <div class="centre-piece">
+            <div class="page-name">
+                NEW PAGE<br>
+                <span>CONTENT HERE</span>
+            </div>
         </div>
+        <div class="info">
+            <div class="nav-button">
+                <a href="https://google.com">LEADERBOARDS</a>
+            </div>
+            <div class="nav-button">
+                <a href="https://google.com">HELP</a>
+            </div>
+            <div class="circle-button" onclick="window.location.href='index.html';">
+                ⬅
+            </div>
+        </div>
+    </header>
 
-        <div class="content">
+    <main class="main">
+        <section class="intro">
             <h1>Welcome to the New Page</h1>
-            <p>This is where the content for the new page will go.</p>
-        </div>
+            <p>This is where the content for the new page will go. Stay tuned for updates!</p>
+        </section>
 
-        <div class="leaderboard-container">
+        <section class="leaderboard-container">
+            <h2>Top Teams</h2>
             <table class="leaderboard">
                 <thead>
                     <tr>
                         <th>S.No</th>
-                        <th>TEAM NAME</th>
-                        <th>POINTS</th>
+                        <th>Team Name</th>
+                        <th>Points</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1)</td>
-                        <td>Team Alpha</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>2)</td>
-                        <td>Team Beta</td>
-                        <td>90</td>
-                    </tr>
-                    <tr>
-                        <td>3)</td>
-                        <td>Team Gamma</td>
-                        <td>80</td>
-                    </tr>
-                    <tr>
-                        <td>4)</td>
-                        <td>Team Delta</td>
-                        <td>70</td>
-                    </tr>
-                    <tr>
-                        <td>5)</td>
-                        <td>Team Epsilon</td>
-                        <td>60</td>
-                    </tr>
+                    <tr><td>1</td><td>Team Alpha</td><td>100</td></tr>
+                    <tr><td>2</td><td>Team Beta</td><td>90</td></tr>
+                    <tr><td>3</td><td>Team Gamma</td><td>80</td></tr>
+                    <tr><td>4</td><td>Team Delta</td><td>70</td></tr>
+                    <tr><td>5</td><td>Team Epsilon</td><td>60</td></tr>
                 </tbody>
             </table>
-        </div>
-    </body>
+        </section>
+    </main>
+</body>
 </html>
