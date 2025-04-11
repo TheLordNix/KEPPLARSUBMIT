@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Page | EPOCH'25</title>
-    <link rel="stylesheet" href="static/css/new_website.css">
+    <title>Keplar's Submit | EPOCH'25</title>
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
     <header class="header">
-        <div class="logo-button">
-            <div class="home-box">
-                <img class="home-icon" src="static/images/dhruva.png" alt="Home">
-            </div>
+        <div class="logo-container">
+            <a href="https://teamdhruva.com" target="_blank">
+                <img src="static/images/dhruva.png" alt="Home" class="logo">
+            </a>
         </div>
-        <div class="centre-piece">
-            <div class="page-name">
-                NEW PAGE<br>
-                <span>CONTENT HERE</span>
-            </div>
+        <div class="title-container">
+            <h1>KEPLAR'S SUMMIT</h1>
+            <p class="subtitle">EPOCH' 25</p>
         </div>
-        <div class="info">
-            <div class="nav-button">
-                <a href="https://google.com">LEADERBOARDS</a>
-            </div>
-            <div class="nav-button">
-                <a href="https://google.com">HELP</a>
-            </div>
-            <div class="circle-button" onclick="window.location.href='index.html';">
-                ⬅
-            </div>
-        </div>
+        <nav class="nav">
+            <button class="home-link">Home</button>
+        </nav>
+        <nav class="nav">
+            <button class="logout">Logout</button>
+        </nav>
     </header>
 
     <main class="main">
-        <section class="intro">
-            <h1>Welcome to the New Page</h1>
-            <p>This is where the content for the new page will go. Stay tuned for updates!</p>
-        </section>
-
         <section class="leaderboard-container">
             <h2>Top Teams</h2>
             <table class="leaderboard">
@@ -58,5 +46,6 @@
             </table>
         </section>
     </main>
+    <script src="static/js/script.js" defer></script>
 </body>
 </html>
