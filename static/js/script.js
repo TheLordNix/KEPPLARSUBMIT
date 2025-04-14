@@ -73,6 +73,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Define the checkLeaderboard function to validate if leaderboard is live
+    async function checkLeaderboard() {
+        try {
+            const response = await fetch("http://127.0.0.1:8000/leaderboard");
+            const data = await response.json();
+    
+            if (data && data.isLive) {
+                console.log("Leaderboard is live!");
+                window.location.href = "leaderboard.html";
+            } else {
+                alert("This webpage isn't live yet. Please check back later.");
+            }
+        } catch (error) {
+            console.error("Error checking leaderboard:", error);
+            alert("Unable to check leaderboard status. Please try again later.");
+        }
+    }
+    
     // Help button event listener
     const helpButton = document.querySelector('.help-link');
     if (helpButton) {
@@ -85,10 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Leaderboard button event listener
     const leaderboardButton = document.querySelector('.leaderboard-link');
     if (leaderboardButton) {
-        checkSession();
-        leaderboardButton.addEventListener('click', function(event) {
+        checkSession(); // Ensure session is valid before proceeding
+
+        leaderboardButton.addEventListener('click', async function(event) {
             event.preventDefault();
-            window.location.href = "leaderboard.html";
+            
+            // Check leaderboard status before proceeding
+            await checkLeaderboard();
         });
     }
 
@@ -99,6 +120,67 @@ document.addEventListener('DOMContentLoaded', () => {
         homeButton.addEventListener('click', function(event) {
             event.preventDefault();
             window.location.href = "home.html";
+        });
+    }
+
+    // Download button event listener
+    const downloadButton = document.querySelector('.download-button');
+    if (downloadButton) {
+        checkSession();
+        downloadButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = "http://127.0.0.1:8000/download";
+        });
+    }
+
+    // Upload button event listener
+    const uploadButton = document.querySelector('.upload-button');
+    const modal = document.getElementById('uploadModal');
+    const closeBtn = document.querySelector('.close');
+    const uploadForm = document.getElementById('uploadForm');
+    const uploadStatus = document.getElementById('uploadStatus');
+
+    if (uploadButton) {
+        checkSession(); // Keep session check if needed
+
+        uploadButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            modal.style.display = "block"; // 🔥 Show the modal
+        });
+    }
+
+    // Modal close functionality
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+    }
+
+    // Close modal when clicking outside content
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Upload form submission
+    if (uploadForm) {
+        uploadForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(uploadForm);
+            uploadStatus.innerText = "Uploading...";
+
+            try {
+                const response = await fetch("http://127.0.0.1:8000/upload", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const result = await response.json();
+                uploadStatus.innerText = result.detail || "Upload complete!";
+            } catch (err) {
+                uploadStatus.innerText = "Upload failed. Please try again.";
+            }
         });
     }
 
